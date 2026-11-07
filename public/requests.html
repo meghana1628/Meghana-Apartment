@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Requests</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h2>Apartment Maintenance System</h2>
+    <span>Admin Panel</span>
+</header>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <h3>MENU</h3>
+        <a href="index.html">Dashboard</a>
+        <a href="residents.html">Residents</a>
+        <a href="staff.html">Maintenance Staff</a>
+        <a href="requests.html" class="active">Requests</a>
+        <a href="records.html">Maintenance Records</a>
+    </aside>
+
+    <main class="main-content">
+
+        <h1>Maintenance Requests</h1>
+        <p>Manage and assign apartment maintenance requests.</p>
+
+        <div class="form-container">
+
+            <h2 id="requestFormTitle">Add New Request</h2>
+
+            <form id="requestForm">
+
+                <input type="hidden" id="request_id">
+
+                <div class="form-group">
+                    <label>Select Resident</label>
+                    <select id="request_resident" required>
+                        <option value="">Select Resident</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Assign Maintenance Staff</label>
+                    <select id="request_staff">
+                        <option value="">Not Assigned</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Request Category</label>
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Plumbing">Plumbing</option>
+                        <option value="Electrical">Electrical</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Carpentry">Carpentry</option>
+                        <option value="Painting">Painting</option>
+                        <option value="General Maintenance">General Maintenance</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="description"
+                        placeholder="Describe the maintenance problem"
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Priority</label>
+                    <select id="priority" required>
+                        <option value="">Select Priority</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="status" required>
+                        <option value="Pending">Pending</option>
+                        <option value="Assigned">Assigned</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="requestSubmitBtn">
+                    Add Request
+                </button>
+
+                <button type="reset" onclick="resetRequestForm()">
+                    Clear
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="table-container">
+
+            <h2>Maintenance Requests List</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Resident</th>
+                        <th>Staff</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="requestTable">
+                    <tr>
+                        <td colspan="9">Loading requests...</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

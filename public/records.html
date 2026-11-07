@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Records</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h2>Apartment Maintenance System</h2>
+    <span>Admin Panel</span>
+</header>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <h3>MENU</h3>
+        <a href="index.html">Dashboard</a>
+        <a href="residents.html">Residents</a>
+        <a href="staff.html">Maintenance Staff</a>
+        <a href="requests.html">Requests</a>
+        <a href="records.html" class="active">Maintenance Records</a>
+    </aside>
+
+    <main class="main-content">
+
+        <h1>Maintenance Records</h1>
+        <p>Track completed and ongoing maintenance work.</p>
+
+        <div class="form-container">
+
+            <h2 id="recordFormTitle">Add Maintenance Record</h2>
+
+            <form id="recordForm">
+
+                <input type="hidden" id="record_id">
+
+                <div class="form-group">
+                    <label>Select Request</label>
+                    <select id="record_request" required>
+                        <option value="">Select Request</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Maintenance Staff</label>
+                    <select id="record_staff" required>
+                        <option value="">Select Staff</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Work Description</label>
+                    <textarea id="work_description"
+                        placeholder="Enter work details"
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Start Date</label>
+                    <input type="datetime-local" id="start_date" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Completion Date</label>
+                    <input type="datetime-local" id="completion_date">
+                </div>
+
+                <div class="form-group">
+                    <label>Maintenance Cost (₹)</label>
+                    <input type="number" id="cost"
+                        placeholder="Enter cost"
+                        min="0" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Remarks</label>
+                    <textarea id="remarks"
+                        placeholder="Enter remarks"></textarea>
+                </div>
+
+                <button type="submit" id="recordSubmitBtn">
+                    Add Record
+                </button>
+
+                <button type="reset" onclick="resetRecordForm()">
+                    Clear
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="table-container">
+
+            <h2>Maintenance Records List</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Record ID</th>
+                        <th>Request ID</th>
+                        <th>Staff Name</th>
+                        <th>Work Description</th>
+                        <th>Start Date</th>
+                        <th>Completion Date</th>
+                        <th>Cost</th>
+                        <th>Remarks</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="recordTable">
+                    <tr>
+                        <td colspan="9">Loading records...</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

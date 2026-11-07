@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residents - Apartment Maintenance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h2>Apartment Maintenance System</h2>
+    <span>Admin Panel</span>
+</header>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <h3>MENU</h3>
+        <a href="index.html">Dashboard</a>
+        <a href="residents.html" class="active">Residents</a>
+        <a href="staff.html">Maintenance Staff</a>
+        <a href="requests.html">Requests</a>
+        <a href="records.html">Maintenance Records</a>
+    </aside>
+
+    <main class="main-content">
+
+        <h1>Residents Management</h1>
+        <p>Add, view, update and delete apartment residents.</p>
+
+        <div class="form-container">
+
+            <h2 id="formTitle">Add New Resident</h2>
+
+            <form id="residentForm">
+
+                <input type="hidden" id="resident_id">
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="full_name"
+                        placeholder="Enter full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email"
+                        placeholder="Enter email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone"
+                        placeholder="Enter phone number"
+                        pattern="[0-9]{10}" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Flat Number</label>
+                    <input type="text" id="flat_number"
+                        placeholder="Example: A-101" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Building Name</label>
+                    <input type="text" id="building_name"
+                        placeholder="Enter building name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password"
+                        placeholder="Enter password" required>
+                </div>
+
+                <button type="submit" id="submitBtn">
+                    Add Resident
+                </button>
+
+                <button type="reset" onclick="resetResidentForm()">
+                    Clear
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="table-container">
+
+            <h2>Residents List</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Flat</th>
+                        <th>Building</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="residentTable">
+                    <tr>
+                        <td colspan="7">Loading residents...</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

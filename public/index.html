@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Maintenance - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h2>Apartment Maintenance System</h2>
+    <span>Admin Dashboard</span>
+</header>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <h3>MENU</h3>
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="residents.html">Residents</a>
+        <a href="staff.html">Maintenance Staff</a>
+        <a href="requests.html">Requests</a>
+        <a href="records.html">Maintenance Records</a>
+    </aside>
+
+    <main class="main-content">
+
+        <h1>Dashboard</h1>
+        <p>Welcome to Apartment Maintenance Request Management System.</p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Residents</h3>
+                <h1 id="totalResidents">0</h1>
+            </div>
+
+            <div class="card">
+                <h3>Maintenance Staff</h3>
+                <h1 id="totalStaff">0</h1>
+            </div>
+
+            <div class="card">
+                <h3>Total Requests</h3>
+                <h1 id="totalRequests">0</h1>
+            </div>
+
+            <div class="card">
+                <h3>Pending Requests</h3>
+                <h1 id="pendingRequests">0</h1>
+            </div>
+
+            <div class="card">
+                <h3>Completed Requests</h3>
+                <h1 id="completedRequests">0</h1>
+            </div>
+
+        </div>
+
+        <section class="welcome-box">
+            <h2>Manage Your Apartment Easily!</h2>
+            <p>
+                View residents, manage maintenance staff,
+                track requests and maintain work records
+                in one place.
+            </p>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
